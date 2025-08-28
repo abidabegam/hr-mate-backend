@@ -45,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
@@ -63,7 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wsgi:application'
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
@@ -156,3 +156,19 @@ LOGGING = {
         'level': 'INFO',
     },
 }
+
+# --- ensure drf-spectacular is the active schema generator ---
+REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "drf_spectacular.openapi.AutoSchema"
+
+# --- Ensure drf-spectacular drives schema generation ---
+REST_FRAMEWORK['DEFAULT_SCHEMA_CLASS'] = 'drf_spectacular.openapi.AutoSchema'
+REST_FRAMEWORK['DEFAULT_SCHEMA_CLASS'] = 'drf_spectacular.openapi.AutoSchema'
+
+# --- Ensure Spectacular apps are installed (for Swagger/ReDoc templates) ---
+if 'drf_spectacular' not in INSTALLED_APPS:
+    INSTALLED_APPS.append('drf_spectacular')
+if 'drf_spectacular_sidecar' not in INSTALLED_APPS:
+    INSTALLED_APPS.append('drf_spectacular_sidecar')
+
+# Make sure Spectacular is the schema generator (already set, but keep here)
+REST_FRAMEWORK['DEFAULT_SCHEMA_CLASS'] = 'drf_spectacular.openapi.AutoSchema'
