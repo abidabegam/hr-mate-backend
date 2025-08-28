@@ -1,0 +1,26 @@
+[run]
+omit =
+    settings.py
+    backend/urls.py
+    manage.py
+    */migrations/*
+    */tests/*
+    */__init__.py
+
+[report]
+omit =
+    settings.py
+    backend/urls.py
+    manage.py
+    */migrations/*
+    */tests/*
+    */__init__.py
+
+[html]
+omit =
+    settings.py
+    backend/urls.py
+    manage.py
+    */migrations/*
+    */tests/*
+    */__init__.py

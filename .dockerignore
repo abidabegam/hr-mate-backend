@@ -1,0 +1,21 @@
+# Ignore Python cache files and compiled bytecode
+**/__pycache__/
+**/*.py[cod]
+
+# Ignore virtual environment directories and environment files
+#../venv/
+#.venv/
+
+# Ignore Git directories and files
+.git
+.gitignore
+
+# (Optional) Ignore OS/editor-specific files
+.DS_Store
+.idea/
+.vscode/
+
+# (Optional) Ignore Node modules or build directories
+node_modules/
+build/
+dist/
